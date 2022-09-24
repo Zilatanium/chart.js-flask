@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style></style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" type="application/javascript"></script>
+  </head>
+  <body>
+    <h1>Line Chart</h1>
+	<a id="xValues">{{xValues}}</a>
+	<a id="yValues">{{yValues}}</a>
+
+
+	<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+    <script type="application/javascript">
+		var x = document.getElementById("xValues");
+		var y = document.getElementById("yValues");
+		console.log(x);
+        new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: x,
+          datasets: [{
+            backgroundColor: "rgba(0,0,0,1.0)",
+            borderColor: "rgba(0,0,0,0.1)",
+            data: y
+          }]
+        }      
+	});
+    </script>
+  </body>
+</html>
