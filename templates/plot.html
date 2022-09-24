@@ -7,24 +7,17 @@
   </head>
   <body>
     <h1>Line Chart</h1>
-	<a id="xValues">{{xValues}}</a>
-	<a id="yValues">{{yValues}}</a>
-
-
 	<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-
     <script type="application/javascript">
-		var x = document.getElementById("xValues");
-		var y = document.getElementById("yValues");
-		console.log(x);
         new Chart("myChart", {
         type: "line",
         data: {
-          labels: x,
+          labels: {{xValues}},
           datasets: [{
-            backgroundColor: "rgba(0,0,0,1.0)",
-            borderColor: "rgba(0,0,0,0.1)",
-            data: y
+            label: 'Dataset',
+            borderColor: 'rgb(75, 192, 192)',
+            fill: false,
+            data: {{yValues}}
           }]
         }      
 	});

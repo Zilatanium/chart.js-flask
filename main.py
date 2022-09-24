@@ -13,6 +13,4 @@ def plot():
     yValues=[]
     for x in range(10):
         yValues.append(random.randint(1,20))
-    print(xValues)
-    print(yValues)
-    return render_template('plot.html', xValues = xValues, yValues = yValues)
+    return render_template('plot.html', xValues = json.dumps(xValues), yValues = json.dumps(yValues))
